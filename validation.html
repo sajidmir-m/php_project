@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Validation</title>
+  <script>
+    function validatePassword() {
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password != confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+      }
+
+      if (password.length < 8) {
+        alert("Password must be at least 8 characters long!");
+        return false;
+      }
+
+      // Add more validation rules as needed
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h1>Password Validation</h1>
+  <form onsubmit="return validatePassword()">
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" required>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
